@@ -13,7 +13,7 @@ This project allows us to detect human moods based on their inputs using wit.ai
 	pip install -r requirements.txt
 ```
 
-3. Make sure you have imported all the databases specified in the settings.py
+3. Run the Flask application
 ```
-        mysql -u username -p database_name < file.sql
+        python -m flask run
 ```
