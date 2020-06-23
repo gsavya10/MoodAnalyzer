@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Vanilla Bootstrap v4.2.1 Theme</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/fontAwesome.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/hero-slider.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/templatemo-main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/owl-carousel.css') }}">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+    </head>
+
+<body>
+
+    <div class="fixed-side-navbar">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#home"><span>My Mood</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#services"><span>Quotes</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Videos</span></a></li>
+        </ul>
+    </div>
+
+    <div class="parallax-content baner-content" id="home">
+        <div class="container">
+            <div class="first-content">
+                <h1>{{ mood }}</h1>
+                <span>This is what we believe your mood is!</span>
+                <div class="primary-button">
+                    <a href="#services">Explore our quotes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="service-content" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left-text">
+                        <h4>Uplift your mood</h4>
+                        <div class="line-dec"></div>
+                        <p>Please take a moment to go through our chosen quotes! We believe that reading quotes can uplift your mood!</p>
+                        <p>Here are some quotes specially catered for you since you maybe feeling {{ mood }}.</p>
+                        <div class="primary-button">
+                            <a href="#portfolio">Explore our videos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Quote #1</h4>
+                                <div class="line-dec"></div>
+                                <p>"{{ quote1 }}"</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Quote #2</h4>
+                                <div class="line-dec"></div>
+                                <p>"{{ quote2 }}"</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Quote #3</h4>
+                                <div class="line-dec"></div>
+                                <p>"{{ quote3 }}"</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Quote #4</h4>
+                                <div class="line-dec"></div>
+                                <p>"{{ quote4 }}"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="parallax-content projects-content" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cta-content text-center wow fadeIn" data-wow-delay="0.5s">
+                        <div class="section-heading">
+                            <h1 style="color:white; font-size: 30px; font-weight: 500; text-decoration: underline; text-decoration-color: #ff7d27; text-underline-position: under;">Video to cater to your mood</h1>
+                            <br><br>
+                            <h4 style="color:white;">Please take a moment to go through our chosen video! We believe that audio and visual experiences can truly uplift your mood!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row align-items-center justify-content-center">
+                <iframe width="1102" height="620" src="{{ video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
+
+    <!--
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#home">Back To Top</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    -->
+
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/vendor/jquery-1.11.2.min.js') }}"></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/vendor/bootstrap.min.js') }}"></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/plugins.js') }}"></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}"></script>
+
+    <script>
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";  
+            }
+            document.getElementById(cityName).style.display = "block";  
+        }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $(".fixed-side-navbar a, .primary-button a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+
+              // Store hash
+              var hash = this.hash;
+
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+    </script>
+
+</body>
+</html>

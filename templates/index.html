@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="gsavya10">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet" />
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    <!--<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+    <title>Mood Analyzer</title>
+  </head>
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="{{ url_for('static',filename='video/background-video.mp4') }}" type="video/mp4">
+    </video>
+    <div class="s002">
+      <form name="myForm" action = "/home" method = post onsubmit="return validateForm()">
+        <fieldset>
+          <legend>ANALYZE MY MOOD</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <div class="icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/>
+                </svg>
+            </div>
+            <input id="search" type="text" placeholder="How was your day?" name = "expression" value = "{{request.form.expression }}" required/>
+          </div>
+          <div class="input-field fifth-wrap">
+            <button class="btn-search" type="submit">SEARCH</button>
+          </div>
+        </div>
+          <div>
+              {% if error != "" %}
+                <h3 id="error" style="color: aqua">{{ error }}</h3>
+              {% else %}
+                <h3 id="conditions">Tell us about your day!</h3>
+              {% endif %}
+          </div>
+      </form>
+    </div>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'jquery-3.3.1.min.js') }}"></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'main5.js') }}" ></script>
+  </body>
+</html>
