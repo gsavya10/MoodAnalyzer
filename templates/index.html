@@ -18,18 +18,25 @@
       <source src="{{ url_for('static',filename='video/background-video.mp4') }}" type="video/mp4">
     </video>
     <div class="s002">
-      <form name="myForm" action = "/home" method = post onsubmit="return validateForm()">
+      <form id="myForm" name="myForm" action = "/home" method = post onsubmit="return validateForm()">
         <fieldset>
-          <legend>ANALYZE MY MOOD</legend>
+          <legend>HOW YOU DOING?</legend>
         </fieldset>
         <div class="inner-form">
-          <div class="input-field first-wrap">
-            <div class="icon-wrap">
+          <div class="input-field first-wrap" id="results">
+            <!--<div class="icon-wrap">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/>
                 </svg>
+            </div>-->
+            <div class="icon-wrap">
+                <a href="#" id="start_button" onclick="startDictation(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+                    </svg>
+                </a>
             </div>
-            <input id="search" type="text" placeholder="How was your day?" name = "expression" value = "{{request.form.expression }}" required/>
+            <input id="search" class="final" type="text" placeholder="How was your day?" name = "expression" value = "{{request.form.expression }}" required/>
           </div>
           <div class="input-field fifth-wrap">
             <button class="btn-search" type="submit">SEARCH</button>
