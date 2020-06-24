@@ -1,5 +1,5 @@
 # Mood Analyzer
-This project allows us to detect human moods based on their inputs using wit.ai
+This Flask application allows us to detect human moods based on their inputs using wit.ai NLP.
 
 ## Installation
 1. Install ``virtualenv`` and create a VM :
